@@ -1,6 +1,7 @@
 # WP project
 
-Work in progress. Nothing working here for now !
+####  Work in progress. Nothing working here for now !
+
 
 WordPress 4.7 comes with REST API endpoints for posts, comments, terms, users, meta, and settings.
 You can find documentation here:

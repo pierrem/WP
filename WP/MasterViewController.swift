@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import WordPress
 
 class MasterViewController: UITableViewController {
 
@@ -28,13 +29,12 @@ class MasterViewController: UITableViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
+
+        fetchLastPosts()
+
+
         clearsSelectionOnViewWillAppear = splitViewController!.isCollapsed
         super.viewWillAppear(animated)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     func insertNewObject(_ sender: Any) {
@@ -90,5 +90,20 @@ class MasterViewController: UITableViewController {
     }
 
 
+
+    func fetchLastPosts() {
+        let siteURL = "https://public-api.wordpress.com/rest/v1.1/sites/developer.wordpress.com"
+
+        let wpRequest = WordPress.Request(url:siteURL)
+
+        wpRequest.fetchLastPosts(page:1, number:10, completionHandler: {
+            posts, error in
+            print ("posts: \(String(describing: posts))")
+        })
+
+    }
+
 }
+
+
 

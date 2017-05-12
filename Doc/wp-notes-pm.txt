@@ -8,9 +8,13 @@ Vendredi 12 mai 2017
 todo:
 
 en cours:
-* embeding WordPress framework
+* une requete style All Posts dans le framework
 
 
 done:
+* embeding WordPress framework - dans projet/target/general embeded binaries (et pas dans build phase !)
 * création projet et framework
+
+
+------
 
