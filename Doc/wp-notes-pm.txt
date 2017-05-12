@@ -1,0 +1,16 @@
+wp-notes-pm.txt
+---------------
+
+
+Vendredi 12 mai 2017
+--------------------
+
+todo:
+
+en cours:
+* embeding WordPress framework
+
+
+done:
+* création projet et framework
+
