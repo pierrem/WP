@@ -1,0 +1,7 @@
+wp-post.txt
+-----------
+
+WordPress version 4.7 inclus maintenant l'API REST (en version 2) en interne.
+Cette API est incompatible avec la version 1.x précédement disponible à travers un plugin.
+
+https://developer.wordpress.org/rest-api

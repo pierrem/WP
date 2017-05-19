@@ -1,0 +1,27 @@
+route = URL
+endpoint = route + method
+
+https://demo.wp-api.org/wp-json/wp/v2
+
+
+renvoie la liste des routes et leur descriptions
+par exemple description de la route liste des posts:
+
+    "/wp/v2/posts": {
+      "namespace": "wp/v2",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "endpoints": [
+        {
+          "methods": [
+            "GET"
+          ],
+          "args": {
+            "context": {
+              "required": false,
+
+
+
+

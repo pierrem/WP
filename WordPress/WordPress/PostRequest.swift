@@ -1,28 +1,53 @@
 //
-//  Request.swift
+//  PostRequest.swift
 //  WordPress
 //
 //  Created by Pierre Marty on 12/05/2017.
 //  Copyright © 2017 alpeslog. All rights reserved.
 //
 
-import Foundation
+//
+// a request returning posts
+//
 
 import Foundation
 
-public class Request: NSObject
+import Foundation
+
+public class PostRequest: NSObject
 {
+    private var baseURL = ""
+    private var page:Int? = nil
+    private var perPage:Int? = nil
+    private var search:String? = nil
 
-    private var baseURL:String?
+    private var requestURL = ""
+    private var isFirstParameter = true       // for building the http request
 
-    public convenience init(url: String) {
+    public convenience init(url: String, page:Int?=nil, perPage:Int?=nil, search:String?=nil) {
         self.init()
         self.baseURL = url
+        self.page = page            // page parameter is one based [1..[
+        self.perPage = perPage
+        self.search = search
     }
 
-    // page parameter is one based [1..[
-    public func fetchLastPosts (page:Int, number:Int, completionHandler:@escaping (Array<Dictionary<String, AnyObject>>?, Error?) -> Void) {
-        let requestURL = baseURL! + "/posts/?page=\(page)&per_page=\(number)"
+
+    public func fetchLastPosts (completionHandler:@escaping (Array<Dictionary<String, AnyObject>>?, Error?) -> Void) {
+        requestURL = baseURL + "/posts"
+        isFirstParameter = true
+        if let page = self.page {
+            self.addParameter("page", page)
+        }
+
+        if let perPage = self.perPage {
+            self.addParameter("per_page", perPage)
+        }
+
+        if let search = self.search {
+            self.addParameter("search", search)
+        }
+
         let url = URL(string: requestURL)!
         let urlSession = URLSession.shared
 
@@ -52,9 +77,18 @@ public class Request: NSObject
             }
             completionHandler(articles, jsonError);
         })
-        
+
         dataTask.resume()
     }
-    
+
+    private func addParameter (_ name:String, _ value:Any) {
+        if isFirstParameter {
+            requestURL += "?\(name)=\(value)"
+            isFirstParameter = false
+        }
+        else {
+            requestURL += "&\(name)=\(value)"
+        }
+    }
 }
 

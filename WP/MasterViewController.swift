@@ -91,11 +91,12 @@ class MasterViewController: UITableViewController {
 
 
     func fetchLastPosts() {
-        let siteURL = "https://demo.wp-api.org/wp-json/wp/v2"
-        //let siteURL = "https://alpeslog.com/wp-json/wp/v2"
-        let wpRequest = WordPress.Request(url:siteURL)
+        //let siteURL = "https://demo.wp-api.org/wp-json/wp/v2"
+        let siteURL = "https://alpeslog.com/wp-json/wp/v2"
 
-        wpRequest.fetchLastPosts(page:1, number:10, completionHandler: {
+        let wpRequest = WordPress.PostRequest(url:siteURL, page:1, perPage:2, search:"Swift")
+
+        wpRequest.fetchLastPosts(completionHandler: {
             posts, error in
             print ("posts: \(String(describing: posts))")
         })

@@ -2,11 +2,7 @@ wp-notes-pm.txt
 ---------------
 
 todo:
-* faire une enum de la liste des champs d'un post (avec type attendu pour control ?)
-cf let requestURL = baseURL! + "/posts/?page=\(page)&number=\(number)&fields=ID,title,date,featured_image"
-* passer la liste des champs demandés en paramètre
 * appli de test : affiche détail post sous forme d'une liste avec des cell en fc tdes types (texte / image)
-
 
 
 en cours:
@@ -14,11 +10,11 @@ en cours:
 done:
 
 
-
 Vendredi 19 mai 2017
 --------------------
-* utiliser WP REST_API sur les url http://alpeslog.com/wp-json/wp/v2/posts ou "https://demo.wp-api.org/wp-json/wp/v2"
-
+* utiliser WP REST_API v2 sur les url
+    http://alpeslog.com/wp-json/wp/v2/posts
+    https://demo.wp-api.org/wp-json/wp/v2
 
 
 Vendredi 12 mai 2017
@@ -31,24 +27,3 @@ Vendredi 12 mai 2017
 
 
 -------
-[
-"featured_image": https://developer.files.wordpress.com/2016/01/ddos-dash.png,
-"date": 2016-02-08T16:48:38+00:00,
-"ID": 90875,
-"title": Open Source Flow Collecting with Elastic, Logstash, and Kibana
-]
-
-
---
-
-[["featured_image": , "date": 2017-02-14T22:07:45+00:00, "ID": 92019, "title": New WordPress unified API console],
-["featured_image": , "date": 2017-02-09T10:37:39+00:00, "ID": 91981, "title": Get.blog Goes Open Source],
-["featured_image": , "date": 2016-11-11T01:37:34+00:00, "ID": 91728, "title": WordPress REST API on WordPress.com],
-["featured_image": , "date": 2016-08-11T14:23:04+00:00, "ID": 91103, "title": Improved REST API Support for Custom Taxonomies],
-["featured_image": , "date": 2016-05-12T01:56:16+00:00, "ID": 91224, "title": Introducing our WordPress.com Automated e2e Tests],
-["featured_image": , "date": 2016-05-03T18:44:02+00:00, "ID": 91122, "title": State of WordPress.com Elasticsearch Systems 2016],
-["featured_image": https://developer.files.wordpress.com/2016/01/ddos-dash.png, "date": 2016-02-08T16:48:38+00:00, "ID": 90875, "title": Open Source Flow Collecting with Elastic, Logstash, and Kibana],
-["featured_image": , "date": 2015-12-18T18:00:26+00:00, "ID": 90596, "title": What&#8217;s new in Calypso?],
-["featured_image": https://developer.files.wordpress.com/2015/12/writing.png, "date": 2015-12-17T20:16:16+00:00, "ID": 90569, "title": WordPress.com Desktop App Goes Open Source, Linux App Arrives],
-["featured_image": , "date": 2015-11-23T17:00:14+00:00, "ID": 89959, "title": The Story Behind the New WordPress.com]]
-
