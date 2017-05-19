@@ -12,6 +12,7 @@ done:
 
 Vendredi 19 mai 2017
 --------------------
+* PostRequest et Post (minimaliste !)
 * utiliser WP REST_API v2 sur les url
     http://alpeslog.com/wp-json/wp/v2/posts
     https://demo.wp-api.org/wp-json/wp/v2

@@ -33,7 +33,7 @@ public class PostRequest: NSObject
     }
 
 
-    public func fetchLastPosts (completionHandler:@escaping (Array<Dictionary<String, AnyObject>>?, Error?) -> Void) {
+    public func fetchLastPosts (completionHandler:@escaping (Array<Post>?, Error?) -> Void) {
         requestURL = baseURL + "/posts"
         isFirstParameter = true
         if let page = self.page {
@@ -65,17 +65,22 @@ public class PostRequest: NSObject
                 jsonError = error
                 jsonResult = nil
             }
-            var articles:Array<Dictionary<String, AnyObject>> = []
+            //var articles:Array<Dictionary<String, AnyObject>> = []
 
-            if let posts = jsonResult as? [Dictionary<String, AnyObject>] {
-                for post in posts {
-                    if let _ = post["id"] as? Int,
-                        let _ = post["title"] as? Dictionary<String, String>  {     // "title": {"rendered": "NessContact" },
-                        articles.append(post)
+            var posts:Array<Post> = []
+
+            if let postArray = jsonResult as? [Dictionary<String, AnyObject>] {
+                for postDictionary in postArray {
+                    if let post = Post(data:postDictionary) {
+                        posts.append(post)
                     }
+//                    if let _ = post["id"] as? Int,
+//                        let _ = post["title"] as? Dictionary<String, String>  {     // "title": {"rendered": "NessContact" },
+//                        articles.append(post)
+//                    }
                 }
             }
-            completionHandler(articles, jsonError);
+            completionHandler(posts, jsonError);
         })
 
         dataTask.resume()
