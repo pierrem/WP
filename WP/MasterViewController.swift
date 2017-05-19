@@ -90,10 +90,9 @@ class MasterViewController: UITableViewController {
     }
 
 
-
     func fetchLastPosts() {
-        let siteURL = "https://public-api.wordpress.com/rest/v1.1/sites/developer.wordpress.com"
-
+        let siteURL = "https://demo.wp-api.org/wp-json/wp/v2"
+        //let siteURL = "https://alpeslog.com/wp-json/wp/v2"
         let wpRequest = WordPress.Request(url:siteURL)
 
         wpRequest.fetchLastPosts(page:1, number:10, completionHandler: {
