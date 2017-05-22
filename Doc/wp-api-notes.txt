@@ -3,7 +3,6 @@ endpoint = route + method
 
 https://demo.wp-api.org/wp-json/wp/v2
 
-
 renvoie la liste des routes et leur descriptions
 par exemple description de la route liste des posts:
 
@@ -21,6 +20,14 @@ par exemple description de la route liste des posts:
           "args": {
             "context": {
               "required": false,
+
+
+Request Class
+La doc voit les requêtes du coté appli WordPress. La réception d'une requête http crée un objet de la classe WP_REST_Request dans l'appli coté serveur. Les données sont collectées dans un objet WP_REST_Response.
+
+
+Schema : descripteur de la structure des données échangées.
+
 
 
 

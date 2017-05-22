@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import WordPress
 
 class DetailViewController: UIViewController {
 
@@ -15,9 +16,9 @@ class DetailViewController: UIViewController {
 
     func configureView() {
         // Update the user interface for the detail item.
-        if let detail = detailItem {
+        if let post = post {
             if let label = detailDescriptionLabel {
-                label.text = detail.description
+                label.text = post.title
             }
         }
     }
@@ -33,7 +34,7 @@ class DetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    var detailItem: NSDate? {
+    var post: WordPress.Post? {
         didSet {
             // Update the view.
             configureView()
