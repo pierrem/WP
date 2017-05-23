@@ -2,13 +2,30 @@ wp-notes-pm.txt
 ---------------
 
 todo:
-* appli de test : affiche détail post sous forme d'une liste avec des cell en fc tdes types (texte / image)
+* appli de test : affiche détail post sous forme d'une liste avec des cell en fct des types (texte / image)
+* compléter structure Post
+* compléter requete PostRequest
+* mécanisme extension contenu des post
+* requéte environement
 
+
+Mardi 22 mai
+------------
+
+todo:
+* voir les médias
 
 en cours:
 
 done:
+* affichage contenu Post (détail)
+* scroll en haut du text
+* text stylé (mais on pourrait aussi utiliser une WebView)
 
+
+Lundi 22 mai
+------------
+* affiche liste des post
 
 Vendredi 19 mai 2017
 --------------------
@@ -24,7 +41,3 @@ Vendredi 12 mai 2017
 * embeding WordPress framework - dans projet/target/general embeded binaries (et pas dans build phase !)
 * création projet et framework
 
-
-
-
--------

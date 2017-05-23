@@ -9,12 +9,13 @@
 /* Begin PBXBuildFile section */
 		8F5320DA1EC6074B00CBF049 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5320D91EC6074B00CBF049 /* AppDelegate.swift */; };
 		8F5320DC1EC6074B00CBF049 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5320DB1EC6074B00CBF049 /* MasterViewController.swift */; };
-		8F5320DE1EC6074B00CBF049 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5320DD1EC6074B00CBF049 /* DetailViewController.swift */; };
+		8F5320DE1EC6074B00CBF049 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5320DD1EC6074B00CBF049 /* PostViewController.swift */; };
 		8F5320E11EC6074B00CBF049 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F5320DF1EC6074B00CBF049 /* Main.storyboard */; };
 		8F5320E31EC6074B00CBF049 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F5320E21EC6074B00CBF049 /* Assets.xcassets */; };
 		8F5320E61EC6074B00CBF049 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F5320E41EC6074B00CBF049 /* LaunchScreen.storyboard */; };
 		8F5321261EC6127E00CBF049 /* WordPress.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F5321251EC6127E00CBF049 /* WordPress.framework */; };
 		8F5321271EC6127E00CBF049 /* WordPress.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8F5321251EC6127E00CBF049 /* WordPress.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8F76F6931ED42F9B00BC38C4 /* String+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F76F6921ED42F9B00BC38C4 /* String+Convenience.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -35,12 +36,13 @@
 		8F5320D61EC6074B00CBF049 /* WP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F5320D91EC6074B00CBF049 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8F5320DB1EC6074B00CBF049 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		8F5320DD1EC6074B00CBF049 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		8F5320DD1EC6074B00CBF049 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		8F5320E01EC6074B00CBF049 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8F5320E21EC6074B00CBF049 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8F5320E51EC6074B00CBF049 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8F5320E71EC6074B00CBF049 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8F5321251EC6127E00CBF049 /* WordPress.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WordPress.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F76F6921ED42F9B00BC38C4 /* String+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Convenience.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +79,8 @@
 			children = (
 				8F5320D91EC6074B00CBF049 /* AppDelegate.swift */,
 				8F5320DB1EC6074B00CBF049 /* MasterViewController.swift */,
-				8F5320DD1EC6074B00CBF049 /* DetailViewController.swift */,
+				8F5320DD1EC6074B00CBF049 /* PostViewController.swift */,
+				8F76F6921ED42F9B00BC38C4 /* String+Convenience.swift */,
 				8F5320DF1EC6074B00CBF049 /* Main.storyboard */,
 				8F5320ED1EC60AD300CBF049 /* Supporting files */,
 			);
@@ -176,8 +179,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F5320DE1EC6074B00CBF049 /* DetailViewController.swift in Sources */,
+				8F5320DE1EC6074B00CBF049 /* PostViewController.swift in Sources */,
 				8F5320DC1EC6074B00CBF049 /* MasterViewController.swift in Sources */,
+				8F76F6931ED42F9B00BC38C4 /* String+Convenience.swift in Sources */,
 				8F5320DA1EC6074B00CBF049 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,7 +11,7 @@ import WordPress
 
 class MasterViewController: UITableViewController {
 
-    var detailViewController: DetailViewController? = nil
+    var PostViewController: PostViewController? = nil
     // var objects = [Any]()
 
     var posts = Array<WordPress.Post>()
@@ -19,17 +19,18 @@ class MasterViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        navigationItem.leftBarButtonItem = editButtonItem
+        // navigationItem.leftBarButtonItem = editButtonItem
 
         if let split = splitViewController {
             let controllers = split.viewControllers
-            detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
+            PostViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? PostViewController
         }
+
+        self.title = "Posts"
     }
 
     override func viewWillAppear(_ animated: Bool) {
         fetchLastPosts()
-
         clearsSelectionOnViewWillAppear = splitViewController!.isCollapsed
         super.viewWillAppear(animated)
     }
@@ -41,7 +42,7 @@ class MasterViewController: UITableViewController {
         if segue.identifier == "showDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let selectedPost = posts[indexPath.row]
-                let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
+                let controller = (segue.destination as! UINavigationController).topViewController as! PostViewController
                 controller.post = selectedPost
                 controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true
@@ -61,9 +62,8 @@ class MasterViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-
         let post = posts[indexPath.row]
-        cell.textLabel!.text = post.title
+        cell.textLabel!.text = String(htmlEncodedString:post.title)
         return cell
     }
 
@@ -82,7 +82,7 @@ class MasterViewController: UITableViewController {
         let postRequest = WordPress.PostRequest(url:siteURL, page:1, perPage:10)
 
         postRequest.fetchLastPosts(completionHandler: { posts, error in
-            print ("posts: \(String(describing: posts)))")
+            // print ("posts: \(String(describing: posts)))")
             if let newposts = posts {
                 DispatchQueue.main.async {
                     self.posts = newposts
