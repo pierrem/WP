@@ -24,12 +24,9 @@ extension String {
 
     func htmlToAttributedString() -> NSAttributedString? {
         if let data = self.data(using:.utf8) {
-            let options:[String : Any] = [
-                NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,
-                NSCharacterEncodingDocumentAttribute: String.Encoding.utf8.rawValue
-            ]
-
-            if let attributedString = try? NSAttributedString(data: data, options:options, documentAttributes:nil) {
+            let options:[String : Any] = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,
+                                          NSCharacterEncodingDocumentAttribute: String.Encoding.utf8.rawValue]
+            if let attributedString = try? NSAttributedString(data:data, options:options, documentAttributes:nil) {
                 return attributedString
             }
         }

@@ -12,8 +12,6 @@
 
 import Foundation
 
-import Foundation
-
 public class PostRequest: NSObject
 {
     private var baseURL = ""
@@ -65,19 +63,13 @@ public class PostRequest: NSObject
                 jsonError = error
                 jsonResult = nil
             }
-            //var articles:Array<Dictionary<String, AnyObject>> = []
 
             var posts:Array<Post> = []
-
             if let postArray = jsonResult as? [Dictionary<String, AnyObject>] {
                 for postDictionary in postArray {
                     if let post = Post(data:postDictionary) {
                         posts.append(post)
                     }
-//                    if let _ = post["id"] as? Int,
-//                        let _ = post["title"] as? Dictionary<String, String>  {     // "title": {"rendered": "NessContact" },
-//                        articles.append(post)
-//                    }
                 }
             }
             completionHandler(posts, jsonError);

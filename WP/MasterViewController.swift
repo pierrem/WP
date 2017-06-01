@@ -12,21 +12,15 @@ import WordPress
 class MasterViewController: UITableViewController {
 
     var PostViewController: PostViewController? = nil
-    // var objects = [Any]()
 
     var posts = Array<WordPress.Post>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        // navigationItem.leftBarButtonItem = editButtonItem
-
         if let split = splitViewController {
             let controllers = split.viewControllers
             PostViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? PostViewController
         }
-
-        self.title = "Posts"
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -67,10 +61,6 @@ class MasterViewController: UITableViewController {
         return cell
     }
 
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
 
 
     func fetchLastPosts() {

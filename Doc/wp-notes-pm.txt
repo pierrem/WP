@@ -2,18 +2,20 @@ wp-notes-pm.txt
 ---------------
 
 todo:
-* appli de test : affiche détail post sous forme d'une liste avec des cell en fct des types (texte / image)
 * compléter structure Post
 * compléter requete PostRequest
 * mécanisme extension contenu des post
 * requéte environement
+* paramétrage url (liste de sites)
+* activity indicator
+* refresh
+* voir les médias
 
 
 Mardi 22 mai
 ------------
 
 todo:
-* voir les médias
 
 en cours:
 
@@ -25,15 +27,12 @@ done:
 
 Lundi 22 mai
 ------------
-* affiche liste des post
+* affiche liste des posts
 
 Vendredi 19 mai 2017
 --------------------
 * PostRequest et Post (minimaliste !)
-* utiliser WP REST_API v2 sur les url
-    http://alpeslog.com/wp-json/wp/v2/posts
-    https://demo.wp-api.org/wp-json/wp/v2
-
+* utiliser WP REST_API v2 sur les url type /wp-json/wp/v2
 
 Vendredi 12 mai 2017
 --------------------
