@@ -1,6 +1,13 @@
 wp-notes-pm.txt
 ---------------
 
+https://developer.wordpress.org/rest-api
+
+Any: n'importe quel type
+AnyObject : une instance d'une classe
+
+
+
 todo:
 * compléter structure Post
 * compléter requete PostRequest
@@ -13,9 +20,8 @@ todo:
 
 
 
-jeudi 1er juin 2017
--------------------
-
+mardi 13 juin
+-------------
 todo:
 
 en cours:
@@ -23,6 +29,11 @@ en cours:
 
 
 done:
+
+
+
+jeudi 1er juin 2017
+-------------------
 * versioning du framework:
 https://stackoverflow.com/questions/24538215/get-version-number-of-ios-universal-framework-in-client
 you can set your version by updating Current Project Version field under Versioning in Build Settings

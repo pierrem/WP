@@ -9,7 +9,7 @@
 import UIKit
 
 
-// idea from https://stackoverflow.com/questions/25607247/how-do-i-decode-html-entities-in-swift
+// original idea from https://stackoverflow.com/questions/25607247/how-do-i-decode-html-entities-in-swift
 
 extension String {
     init(htmlEncodedString: String) {

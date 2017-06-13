@@ -15,6 +15,9 @@ import Foundation
 public class PostRequest: NSObject
 {
     private var baseURL = ""
+
+    private var parameters:Dictionary<String, AnyObject> = Dictionary<String, AnyObject>()
+
     private var page:Int? = nil
     private var perPage:Int? = nil
     private var search:String? = nil
@@ -35,15 +38,15 @@ public class PostRequest: NSObject
         requestURL = baseURL + "/posts"
         isFirstParameter = true
         if let page = self.page {
-            self.addParameter("page", page)
+            self.appendParameter("page", page)
         }
 
         if let perPage = self.perPage {
-            self.addParameter("per_page", perPage)
+            self.appendParameter("per_page", perPage)
         }
 
         if let search = self.search {
-            self.addParameter("search", search)
+            self.appendParameter("search", search)
         }
 
         let url = URL(string: requestURL)!
@@ -65,9 +68,9 @@ public class PostRequest: NSObject
             }
 
             var posts:Array<Post> = []
-            if let postArray = jsonResult as? [Dictionary<String, AnyObject>] {
+            if let postArray = jsonResult as? [Dictionary<String, Any>] {
                 for postDictionary in postArray {
-                    if let post = Post(data:postDictionary) {
+                    if let post = Post(data:postDictionary as Dictionary<String, AnyObject>) {
                         posts.append(post)
                     }
                 }
@@ -78,7 +81,7 @@ public class PostRequest: NSObject
         dataTask.resume()
     }
 
-    private func addParameter (_ name:String, _ value:Any) {
+    private func appendParameter (_ name:String, _ value:Any) {
         if isFirstParameter {
             requestURL += "?\(name)=\(value)"
             isFirstParameter = false

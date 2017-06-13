@@ -6,6 +6,10 @@
 //  Copyright © 2017 alpeslog. All rights reserved.
 //
 
+//
+//  a Post received from WP server
+//
+
 import Foundation
 
 public struct Post : CustomStringConvertible
@@ -21,8 +25,7 @@ public struct Post : CustomStringConvertible
     }
 
 
-    init?(data: Dictionary<String, AnyObject>)
-    {
+    init? (data: Dictionary<String, AnyObject>) {
         guard
             let identifier = data["id"] as? Int,
             let dateString = data["date"] as? String,
