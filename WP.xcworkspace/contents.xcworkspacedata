@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <Group
+      location = "group:Doc"
+      name = "Doc">
+      <FileRef
+         location = "group:wp-notes-pm.txt">
+      </FileRef>
+   </Group>
+   <FileRef
+      location = "group:README.md">
+   </FileRef>
+   <FileRef
+      location = "group:WP.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:WordPress/WordPress.xcodeproj">
+   </FileRef>
+</Workspace>
