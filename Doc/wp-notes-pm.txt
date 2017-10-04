@@ -20,16 +20,31 @@ todo:
 
 
 
-mardi 13 juin
--------------
-todo:
-
-en cours:
 * parametre requete POST : dictionnaire + definir les constantes (string) sous forme d'enum
 
+==> c'est pas une bonne solution: trop lourd:
+requestParams[WordPress.PostRequest.ParamKey.page] = 1
 
-done:
+=> permettre de rajouter parametres key/value  ou dictionnaire à la requete
 
+var postRequest = WordPress.PostRequest(url:siteURL, page:1, perPage:10)
+postRequest["search"] = "Swift"
+postRequest.addParameter ["search":"Swift"]
+postRequest.search = "Swift"
+
+
+mercredi 4 octobre 2017
+-----------------------
+* XCode 9
+
+
+
+.../...
+
+
+mercredi 14 juin
+----------------
+* test constant ds le framework
 
 
 jeudi 1er juin 2017

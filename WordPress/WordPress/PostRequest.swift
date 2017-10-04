@@ -16,7 +16,7 @@ public class PostRequest: NSObject
 {
     private var baseURL = ""
 
-    private var parameters:Dictionary<String, AnyObject> = Dictionary<String, AnyObject>()
+    private var parameters:Dictionary<String, Any>? = nil
 
     private var page:Int? = nil
     private var perPage:Int? = nil
@@ -33,6 +33,11 @@ public class PostRequest: NSObject
         self.search = search
     }
 
+    public convenience init(url: String, parameters:Dictionary<String, Any>?=nil) {
+        self.init()
+        self.baseURL = url
+        self.parameters = parameters
+    }
 
     public func fetchLastPosts (completionHandler:@escaping (Array<Post>?, Error?) -> Void) {
         requestURL = baseURL + "/posts"
@@ -90,5 +95,11 @@ public class PostRequest: NSObject
             requestURL += "&\(name)=\(value)"
         }
     }
+
+    public struct ParamKey {
+        public static let page = "page"
+        public static let perPage = "per_page"
+    }
+
 }
 
